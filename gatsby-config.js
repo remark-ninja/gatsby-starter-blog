@@ -4,6 +4,8 @@ module.exports = {
     author: `Kyle Mathews`,
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    // Get your own at https://remark.ninja
+    remarkNinjaSiteId: `e8f65026-9fb2-4e69-b318-5460dcfbf13d`,
     social: {
       twitter: `kylemathews`,
     },

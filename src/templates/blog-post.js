@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Comments from "remark-ninja-react"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -10,6 +11,8 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
+    const remarkNinjaSiteId = this.props.data.site.siteMetadata
+      .remarkNinjaSiteId
     const { previous, next } = this.props.pageContext
 
     return (
@@ -74,6 +77,7 @@ class BlogPostTemplate extends React.Component {
               )}
             </li>
           </ul>
+          <Comments siteId={remarkNinjaSiteId} />
         </nav>
       </Layout>
     )
@@ -87,6 +91,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        remarkNinjaSiteId
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
